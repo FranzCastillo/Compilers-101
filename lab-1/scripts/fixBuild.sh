@@ -1,0 +1,1 @@
+tr -d '\r' < buildLanguage.sh > newBuildLanguage.sh
