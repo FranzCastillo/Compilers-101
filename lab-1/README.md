@@ -1,5 +1,8 @@
 # Laboratorio 1
 
+## Docuemnto
+Puede ver el PDF adjunto en [Laboratorio Guiado 1](Laboratorio_guiado.pdf), dentro del repositorio.
+
 ## ¿Cómo correrlo?
 
 ### Linux
