@@ -7,6 +7,7 @@ stat:   expr NEWLINE                 # printExpr
     |   'if' expr 'then' stat+ ('else' stat+)? 'end' NEWLINE # if
     |   'while' expr 'do' stat+ 'end' NEWLINE# while
     |   'function' ID '(' (ID (',' ID)*)? ')' 'do' stat+ 'end' NEWLINE # function
+    |   'return' expr NEWLINE        # return
     |   NEWLINE                      # blank
     ;
 
