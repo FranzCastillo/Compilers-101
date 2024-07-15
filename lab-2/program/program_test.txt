@@ -1,2 +1,4 @@
 // ESTO ES UN COMENTARIO
 var = (5 + 5) * 2
+varr = (5 + 5) * 2
+areEquals = var == varr

@@ -80,6 +80,15 @@ class MiniLangListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MiniLangParser#BoolOp.
+    def enterBoolOp(self, ctx:MiniLangParser.BoolOpContext):
+        pass
+
+    # Exit a parse tree produced by MiniLangParser#BoolOp.
+    def exitBoolOp(self, ctx:MiniLangParser.BoolOpContext):
+        pass
+
+
     # Enter a parse tree produced by MiniLangParser#int.
     def enterInt(self, ctx:MiniLangParser.IntContext):
         pass

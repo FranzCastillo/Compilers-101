@@ -10,20 +10,22 @@ else:
 
 def serializedATN():
     return [
-        4,1,13,43,2,0,7,0,2,1,7,1,2,2,7,2,1,0,4,0,8,8,0,11,0,12,0,9,1,1,
+        4,1,21,46,2,0,7,0,2,1,7,1,2,2,7,2,1,0,4,0,8,8,0,11,0,12,0,9,1,1,
         1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,21,8,1,1,2,1,2,1,2,1,2,1,2,1,
-        2,1,2,3,2,30,8,2,1,2,1,2,1,2,1,2,1,2,1,2,5,2,38,8,2,10,2,12,2,41,
-        9,2,1,2,0,1,4,3,0,2,4,0,2,1,0,4,5,1,0,6,7,46,0,7,1,0,0,0,2,20,1,
-        0,0,0,4,29,1,0,0,0,6,8,3,2,1,0,7,6,1,0,0,0,8,9,1,0,0,0,9,7,1,0,0,
-        0,9,10,1,0,0,0,10,1,1,0,0,0,11,12,3,4,2,0,12,13,5,10,0,0,13,21,1,
-        0,0,0,14,15,5,8,0,0,15,16,5,1,0,0,16,17,3,4,2,0,17,18,5,10,0,0,18,
-        21,1,0,0,0,19,21,5,10,0,0,20,11,1,0,0,0,20,14,1,0,0,0,20,19,1,0,
-        0,0,21,3,1,0,0,0,22,23,6,2,-1,0,23,30,5,9,0,0,24,30,5,8,0,0,25,26,
-        5,2,0,0,26,27,3,4,2,0,27,28,5,3,0,0,28,30,1,0,0,0,29,22,1,0,0,0,
-        29,24,1,0,0,0,29,25,1,0,0,0,30,39,1,0,0,0,31,32,10,5,0,0,32,33,7,
-        0,0,0,33,38,3,4,2,6,34,35,10,4,0,0,35,36,7,1,0,0,36,38,3,4,2,5,37,
-        31,1,0,0,0,37,34,1,0,0,0,38,41,1,0,0,0,39,37,1,0,0,0,39,40,1,0,0,
-        0,40,5,1,0,0,0,41,39,1,0,0,0,5,9,20,29,37,39
+        2,1,2,3,2,30,8,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,5,2,41,8,2,
+        10,2,12,2,44,9,2,1,2,0,1,4,3,0,2,4,0,3,1,0,6,7,1,0,8,9,2,0,2,3,12,
+        17,50,0,7,1,0,0,0,2,20,1,0,0,0,4,29,1,0,0,0,6,8,3,2,1,0,7,6,1,0,
+        0,0,8,9,1,0,0,0,9,7,1,0,0,0,9,10,1,0,0,0,10,1,1,0,0,0,11,12,3,4,
+        2,0,12,13,5,18,0,0,13,21,1,0,0,0,14,15,5,10,0,0,15,16,5,1,0,0,16,
+        17,3,4,2,0,17,18,5,18,0,0,18,21,1,0,0,0,19,21,5,18,0,0,20,11,1,0,
+        0,0,20,14,1,0,0,0,20,19,1,0,0,0,21,3,1,0,0,0,22,23,6,2,-1,0,23,30,
+        5,11,0,0,24,30,5,10,0,0,25,26,5,4,0,0,26,27,3,4,2,0,27,28,5,5,0,
+        0,28,30,1,0,0,0,29,22,1,0,0,0,29,24,1,0,0,0,29,25,1,0,0,0,30,42,
+        1,0,0,0,31,32,10,6,0,0,32,33,7,0,0,0,33,41,3,4,2,7,34,35,10,5,0,
+        0,35,36,7,1,0,0,36,41,3,4,2,6,37,38,10,4,0,0,38,39,7,2,0,0,39,41,
+        3,4,2,5,40,31,1,0,0,0,40,34,1,0,0,0,40,37,1,0,0,0,41,44,1,0,0,0,
+        42,40,1,0,0,0,42,43,1,0,0,0,43,5,1,0,0,0,44,42,1,0,0,0,5,9,20,29,
+        40,42
     ]
 
 class MiniLangParser ( Parser ):
@@ -36,12 +38,14 @@ class MiniLangParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'='", "'('", "')'", "'*'", "'/'", "'+'", 
-                     "'-'" ]
+    literalNames = [ "<INVALID>", "'='", "'&&'", "'||'", "'('", "')'", "'*'", 
+                     "'/'", "'+'", "'-'", "<INVALID>", "<INVALID>", "'=='", 
+                     "'!='", "'>'", "'<'", "'>='", "'<='" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "MUL", "DIV", "ADD", "SUB", "ID", "INT", "NEWLINE", 
-                      "WS", "COMMENT", "ERROR" ]
+                      "<INVALID>", "<INVALID>", "MUL", "DIV", "ADD", "SUB", 
+                      "ID", "INT", "EQ", "NEQ", "GT", "LT", "GTE", "LTE", 
+                      "NEWLINE", "WS", "COMMENT", "ERROR" ]
 
     RULE_prog = 0
     RULE_stat = 1
@@ -53,16 +57,24 @@ class MiniLangParser ( Parser ):
     T__0=1
     T__1=2
     T__2=3
-    MUL=4
-    DIV=5
-    ADD=6
-    SUB=7
-    ID=8
-    INT=9
-    NEWLINE=10
-    WS=11
-    COMMENT=12
-    ERROR=13
+    T__3=4
+    T__4=5
+    MUL=6
+    DIV=7
+    ADD=8
+    SUB=9
+    ID=10
+    INT=11
+    EQ=12
+    NEQ=13
+    GT=14
+    LT=15
+    GTE=16
+    LTE=17
+    NEWLINE=18
+    WS=19
+    COMMENT=20
+    ERROR=21
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -117,7 +129,7 @@ class MiniLangParser ( Parser ):
                 self.state = 9 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 1796) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 265232) != 0)):
                     break
 
         except RecognitionException as re:
@@ -363,6 +375,41 @@ class MiniLangParser ( Parser ):
                 listener.exitId(self)
 
 
+    class BoolOpContext(ExprContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniLangParser.ExprContext
+            super().__init__(parser)
+            self.op = None # Token
+            self.copyFrom(ctx)
+
+        def expr(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(MiniLangParser.ExprContext)
+            else:
+                return self.getTypedRuleContext(MiniLangParser.ExprContext,i)
+
+        def EQ(self):
+            return self.getToken(MiniLangParser.EQ, 0)
+        def NEQ(self):
+            return self.getToken(MiniLangParser.NEQ, 0)
+        def GT(self):
+            return self.getToken(MiniLangParser.GT, 0)
+        def LT(self):
+            return self.getToken(MiniLangParser.LT, 0)
+        def GTE(self):
+            return self.getToken(MiniLangParser.GTE, 0)
+        def LTE(self):
+            return self.getToken(MiniLangParser.LTE, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBoolOp" ):
+                listener.enterBoolOp(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBoolOp" ):
+                listener.exitBoolOp(self)
+
+
     class IntContext(ExprContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniLangParser.ExprContext
@@ -395,7 +442,7 @@ class MiniLangParser ( Parser ):
             self.state = 29
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [9]:
+            if token in [11]:
                 localctx = MiniLangParser.IntContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
@@ -403,29 +450,29 @@ class MiniLangParser ( Parser ):
                 self.state = 23
                 self.match(MiniLangParser.INT)
                 pass
-            elif token in [8]:
+            elif token in [10]:
                 localctx = MiniLangParser.IdContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
                 self.state = 24
                 self.match(MiniLangParser.ID)
                 pass
-            elif token in [2]:
+            elif token in [4]:
                 localctx = MiniLangParser.ParensContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
                 self.state = 25
-                self.match(MiniLangParser.T__1)
+                self.match(MiniLangParser.T__3)
                 self.state = 26
                 self.expr(0)
                 self.state = 27
-                self.match(MiniLangParser.T__2)
+                self.match(MiniLangParser.T__4)
                 pass
             else:
                 raise NoViableAltException(self)
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 39
+            self.state = 42
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,4,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -433,36 +480,17 @@ class MiniLangParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 37
+                    self.state = 40
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,3,self._ctx)
                     if la_ == 1:
                         localctx = MiniLangParser.MulDivContext(self, MiniLangParser.ExprContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
                         self.state = 31
-                        if not self.precpred(self._ctx, 5):
+                        if not self.precpred(self._ctx, 6):
                             from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
                         self.state = 32
-                        localctx.op = self._input.LT(1)
-                        _la = self._input.LA(1)
-                        if not(_la==4 or _la==5):
-                            localctx.op = self._errHandler.recoverInline(self)
-                        else:
-                            self._errHandler.reportMatch(self)
-                            self.consume()
-                        self.state = 33
-                        self.expr(6)
-                        pass
-
-                    elif la_ == 2:
-                        localctx = MiniLangParser.AddSubContext(self, MiniLangParser.ExprContext(self, _parentctx, _parentState))
-                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
-                        self.state = 34
-                        if not self.precpred(self._ctx, 4):
-                            from antlr4.error.Errors import FailedPredicateException
-                            raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
-                        self.state = 35
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==6 or _la==7):
@@ -470,12 +498,50 @@ class MiniLangParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
+                        self.state = 33
+                        self.expr(7)
+                        pass
+
+                    elif la_ == 2:
+                        localctx = MiniLangParser.AddSubContext(self, MiniLangParser.ExprContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
+                        self.state = 34
+                        if not self.precpred(self._ctx, 5):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
+                        self.state = 35
+                        localctx.op = self._input.LT(1)
+                        _la = self._input.LA(1)
+                        if not(_la==8 or _la==9):
+                            localctx.op = self._errHandler.recoverInline(self)
+                        else:
+                            self._errHandler.reportMatch(self)
+                            self.consume()
                         self.state = 36
+                        self.expr(6)
+                        pass
+
+                    elif la_ == 3:
+                        localctx = MiniLangParser.BoolOpContext(self, MiniLangParser.ExprContext(self, _parentctx, _parentState))
+                        self.pushNewRecursionContext(localctx, _startState, self.RULE_expr)
+                        self.state = 37
+                        if not self.precpred(self._ctx, 4):
+                            from antlr4.error.Errors import FailedPredicateException
+                            raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
+                        self.state = 38
+                        localctx.op = self._input.LT(1)
+                        _la = self._input.LA(1)
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 258060) != 0)):
+                            localctx.op = self._errHandler.recoverInline(self)
+                        else:
+                            self._errHandler.reportMatch(self)
+                            self.consume()
+                        self.state = 39
                         self.expr(5)
                         pass
 
              
-                self.state = 41
+                self.state = 44
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,4,self._ctx)
 
@@ -501,10 +567,14 @@ class MiniLangParser ( Parser ):
 
     def expr_sempred(self, localctx:ExprContext, predIndex:int):
             if predIndex == 0:
-                return self.precpred(self._ctx, 5)
+                return self.precpred(self._ctx, 6)
          
 
             if predIndex == 1:
+                return self.precpred(self._ctx, 5)
+         
+
+            if predIndex == 2:
                 return self.precpred(self._ctx, 4)
          
 
