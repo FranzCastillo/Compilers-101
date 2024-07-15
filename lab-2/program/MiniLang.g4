@@ -1,6 +1,6 @@
 grammar MiniLang;
 
-prog:   stat+ ;
+prog:   {print("Accepted!");} stat+ ;
 
 stat:   expr NEWLINE                 # printExpr
     |   ID '=' expr NEWLINE          # assign
