@@ -53,6 +53,15 @@ class MiniLangListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MiniLangParser#function.
+    def enterFunction(self, ctx:MiniLangParser.FunctionContext):
+        pass
+
+    # Exit a parse tree produced by MiniLangParser#function.
+    def exitFunction(self, ctx:MiniLangParser.FunctionContext):
+        pass
+
+
     # Enter a parse tree produced by MiniLangParser#blank.
     def enterBlank(self, ctx:MiniLangParser.BlankContext):
         pass

@@ -4,8 +4,9 @@ prog:   {print("Accepted!");} stat+ ;
 
 stat:   expr NEWLINE                 # printExpr
     |   ID '=' expr NEWLINE          # assign
-    |   'if' expr 'then' stat+ ('else' stat+)? 'endif' NEWLINE # if
-    |   'while' expr 'do' stat+ 'endwhile' NEWLINE# while
+    |   'if' expr 'then' stat+ ('else' stat+)? 'end' NEWLINE # if
+    |   'while' expr 'do' stat+ 'end' NEWLINE# while
+    |   'function' ID '(' (ID (',' ID)*)? ')' 'do' stat+ 'end' NEWLINE # function
     |   NEWLINE                      # blank
     ;
 

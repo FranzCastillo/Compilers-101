@@ -2,11 +2,13 @@
 var = (5 + 5) * 2
 varr = (5 + 5) * 2
 
-while var == varr do
-    if var == 20 then
-        newVar = 10
-    else
-        newVar = 5
-    endif
-    var = var - 1
-endwhile
+function miFunction(var, varr) do
+    while var == varr do
+        if var == 20 then
+            newVar = 10
+        else
+            newVar = 5
+        end
+        var = var - 1
+    end
+end
