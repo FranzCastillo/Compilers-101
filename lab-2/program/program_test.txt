@@ -1,4 +1,12 @@
 // ESTO ES UN COMENTARIO
 var = (5 + 5) * 2
 varr = (5 + 5) * 2
-areEquals = var == varr
+
+while var == varr do
+    if var == 20 then
+        newVar = 10
+    else
+        newVar = 5
+    endif
+    var = var - 1
+endwhile

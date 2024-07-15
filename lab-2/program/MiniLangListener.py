@@ -35,6 +35,24 @@ class MiniLangListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MiniLangParser#if.
+    def enterIf(self, ctx:MiniLangParser.IfContext):
+        pass
+
+    # Exit a parse tree produced by MiniLangParser#if.
+    def exitIf(self, ctx:MiniLangParser.IfContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniLangParser#while.
+    def enterWhile(self, ctx:MiniLangParser.WhileContext):
+        pass
+
+    # Exit a parse tree produced by MiniLangParser#while.
+    def exitWhile(self, ctx:MiniLangParser.WhileContext):
+        pass
+
+
     # Enter a parse tree produced by MiniLangParser#blank.
     def enterBlank(self, ctx:MiniLangParser.BlankContext):
         pass
