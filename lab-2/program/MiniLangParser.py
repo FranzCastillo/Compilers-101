@@ -10,7 +10,7 @@ else:
 
 def serializedATN():
     return [
-        4,1,12,43,2,0,7,0,2,1,7,1,2,2,7,2,1,0,4,0,8,8,0,11,0,12,0,9,1,1,
+        4,1,13,43,2,0,7,0,2,1,7,1,2,2,7,2,1,0,4,0,8,8,0,11,0,12,0,9,1,1,
         1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,21,8,1,1,2,1,2,1,2,1,2,1,2,1,
         2,1,2,3,2,30,8,2,1,2,1,2,1,2,1,2,1,2,1,2,5,2,38,8,2,10,2,12,2,41,
         9,2,1,2,0,1,4,3,0,2,4,0,2,1,0,4,5,1,0,6,7,46,0,7,1,0,0,0,2,20,1,
@@ -41,7 +41,7 @@ class MiniLangParser ( Parser ):
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "MUL", "DIV", "ADD", "SUB", "ID", "INT", "NEWLINE", 
-                      "WS", "ERROR" ]
+                      "WS", "COMMENT", "ERROR" ]
 
     RULE_prog = 0
     RULE_stat = 1
@@ -61,7 +61,8 @@ class MiniLangParser ( Parser ):
     INT=9
     NEWLINE=10
     WS=11
-    ERROR=12
+    COMMENT=12
+    ERROR=13
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -294,6 +295,7 @@ class MiniLangParser ( Parser ):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniLangParser.ExprContext
             super().__init__(parser)
+            self.op = None # Token
             self.copyFrom(ctx)
 
         def expr(self, i:int=None):
@@ -320,6 +322,7 @@ class MiniLangParser ( Parser ):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a MiniLangParser.ExprContext
             super().__init__(parser)
+            self.op = None # Token
             self.copyFrom(ctx)
 
         def expr(self, i:int=None):
@@ -441,9 +444,10 @@ class MiniLangParser ( Parser ):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
                         self.state = 32
+                        localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==4 or _la==5):
-                            self._errHandler.recoverInline(self)
+                            localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
@@ -459,9 +463,10 @@ class MiniLangParser ( Parser ):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
                         self.state = 35
+                        localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==6 or _la==7):
-                            self._errHandler.recoverInline(self)
+                            localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()

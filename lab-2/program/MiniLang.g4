@@ -7,8 +7,8 @@ stat:   expr NEWLINE                 # printExpr
     |   NEWLINE                      # blank
     ;
 
-expr:   expr ('*'|'/') expr          # MulDiv
-    |   expr ('+'|'-') expr          # AddSub
+expr:   expr op=('*'|'/') expr       # MulDiv
+    |   expr op=('+'|'-') expr       # AddSub
     |   INT                          # int
     |   ID                           # id
     |   '(' expr ')'                 # parens
@@ -22,5 +22,6 @@ ID  : [a-zA-Z]+ ; // match identifiers
 INT : [0-9]+ ; // match integers
 NEWLINE:'\r'? '\n' ; // return newlines to parser (is end-statement signal)
 WS  : [ \t]+ -> skip ; // toss out whitespace
+COMMENT: '//' ~[\r\n]* -> skip ; // toss out comments
 
 ERROR : . { print("No defined token for: '{0}'".format(self.text)) } ;

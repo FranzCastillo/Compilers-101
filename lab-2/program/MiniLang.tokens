@@ -9,7 +9,8 @@ ID=8
 INT=9
 NEWLINE=10
 WS=11
-ERROR=12
+COMMENT=12
+ERROR=13
 '='=1
 '('=2
 ')'=3

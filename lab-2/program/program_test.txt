@@ -1,3 +1,2 @@
-temp = 1 + 2 * 3 - 4 / 5
-
->
+// ESTO ES UN COMENTARIO
+var = (5 + 5) * 2
