@@ -1,14 +1,15 @@
-// ESTO ES UN COMENTARIO
-var = (5 + 5) * 2
-varr = (5 + 5) * 2
+// This is a comment
+intVar = 10
+strVar = "Hello, World!"
 
-function miFunction(var, varr) do
-    while var == varr do
-        if var == 20 then
-            newVar = 10
+function myFunction(intVar, strVar) do
+    while intVar > 0 do
+        if intVar == 5 then
+            newVar = "Halfway there!"
         else
-            newVar = 5
+            newVar = "Keep going!"
         end
-        var = var - 1
+        intVar = intVar - 1
     end
+    return strVar
 end

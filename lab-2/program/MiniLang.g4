@@ -11,10 +11,15 @@ stat:   expr NEWLINE                 # printExpr
     |   NEWLINE                      # blank
     ;
 
+type:   'int'
+    |   'string'
+    ;
+
 expr:   expr op=('*'|'/') expr       # MulDiv
     |   expr op=('+'|'-') expr       # AddSub
     |   expr op=('=='|'!='|'>'|'<'|'>='|'<='|'&&'|'||') expr  # BoolOp
     |   INT                          # int
+    |   STRING                       # string
     |   ID                           # id
     |   '(' expr ')'                 # parens
     ;
@@ -25,6 +30,7 @@ ADD : '+' ; // define token for addition
 SUB : '-' ; // define token for subtraction
 ID  : [a-zA-Z]+ ; // match identifiers
 INT : [0-9]+ ; // match integers
+STRING : '"' (~["\r\n])* '"' ; // match strings
 
 EQ  : '==';
 NEQ : '!=';

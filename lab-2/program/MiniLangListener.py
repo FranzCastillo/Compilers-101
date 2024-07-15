@@ -62,6 +62,15 @@ class MiniLangListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MiniLangParser#return.
+    def enterReturn(self, ctx:MiniLangParser.ReturnContext):
+        pass
+
+    # Exit a parse tree produced by MiniLangParser#return.
+    def exitReturn(self, ctx:MiniLangParser.ReturnContext):
+        pass
+
+
     # Enter a parse tree produced by MiniLangParser#blank.
     def enterBlank(self, ctx:MiniLangParser.BlankContext):
         pass
@@ -71,12 +80,30 @@ class MiniLangListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by MiniLangParser#type.
+    def enterType(self, ctx:MiniLangParser.TypeContext):
+        pass
+
+    # Exit a parse tree produced by MiniLangParser#type.
+    def exitType(self, ctx:MiniLangParser.TypeContext):
+        pass
+
+
     # Enter a parse tree produced by MiniLangParser#parens.
     def enterParens(self, ctx:MiniLangParser.ParensContext):
         pass
 
     # Exit a parse tree produced by MiniLangParser#parens.
     def exitParens(self, ctx:MiniLangParser.ParensContext):
+        pass
+
+
+    # Enter a parse tree produced by MiniLangParser#string.
+    def enterString(self, ctx:MiniLangParser.StringContext):
+        pass
+
+    # Exit a parse tree produced by MiniLangParser#string.
+    def exitString(self, ctx:MiniLangParser.StringContext):
         pass
 
 
